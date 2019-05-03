@@ -1,0 +1,79 @@
+---
+title: "Binomial Distribution"
+author: "Jason Zhao"
+date: "May 02, 2019"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(binomial)
+```
+
+
+#Binomial 
+
+
+##Binomial Functions 
+
+###Bin Choose
+```{r}
+bin_choose(n = 5, k = 2)
+bin_choose(5,0)
+bin_choose(5, 1:3)
+```
+
+###Bin Distribution
+
+```{r}
+bin_distribution(trials = 5, prob = 0.5)
+```
+
+###Plot Bin Distributon
+```{r}
+dis1 <- bin_distribution(trials = 5, prob = 0.5)
+plot(dis1)
+```
+
+
+
+###Bin Cumulative
+
+```{r}
+bin_cumulative(trials = 5, prob = 0.5)
+```
+
+###Plot Bin Cumulative
+```{r}
+dis2 <- bin_cumulative(trials = 5, prob = 0.5)
+plot(dis2)
+```
+
+
+###Bin Probability.
+```{r}
+bin_probability(success = 2, trials = 5, prob = 0.5)
+bin_probability(success = 0:2, trials = 5, prob = 0.5)
+bin_probability(success = 55, trials = 100, prob = 0.45)
+```
+
+
+###Bin Variable and Summary of Bin Variable
+```{r}
+bin <- bin_variable(3, 0.5)
+bin
+summary(bin)
+```
+
+
+###More details of the binomial variable
+```{r}
+bin_mean(trials = 10, prob = 0.3)
+bin_variance(trials = 10, prob = 0.3)
+bin_mode(trials = 10, prob = 0.3)
+bin_skewness(trials = 10, prob = 0.3)
+bin_kurtosis(trials = 10, prob = 0.3)
+```
